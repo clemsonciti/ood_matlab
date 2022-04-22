@@ -54,14 +54,12 @@ set -x
 #module load intel/16.0.3 virtualgl
   module list
   set -x
-  echo display set to $DISPLAY
-  icewm
+#  icewm
   vglrun matlab -desktop -nosoftwareopengl
 
 <%- else -%>
   module list
   set -x
-  echo display set to $DISPLAY
   matlab -desktop
 <%- end -%>
 
