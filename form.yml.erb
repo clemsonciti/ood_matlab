@@ -124,49 +124,42 @@ attributes:
     <%- end -%>
 
   modules: 
-    label: "Anaconda Version"
+    label: "Matlab Version"
     widget: "select"
     required: true
-    value: "anaconda3/2019.10-gcc/8.3.1"
+    value: "matlab/2021b"
     options:
-      - ["anaconda3/2019.10-gcc/8.3.1","anaconda3/2019.10-gcc/8.3.1"]
-      - ["anaconda3/2020.07-gcc/8.4.1","anaconda3/2020.07-gcc/8.4.1"]
-      - ["anaconda3/2021.05-gcc/8.3.1","anaconda3/2021.05-gcc/8.3.1"]
+      - ["matlab/2021b","matlab/2021b"]
+      - ["matlab/2021a","matlab/2021a"]
+      - ["matlab/2020a","matlab/2020a"]
+      - ["matlab/2019b","matlab/2019b"]
+      - ["matlab/2018b","matlab/2018b"]
+      - ["matlab/MUSC2018ba","matlab/MUSC2018b"]
 
-  pbs_modules:
-    label: "List of modules to be loaded, separate by an empty space"
-    value: ""
-    help: |
-      <small> Provide a space-separated list of modules to be loaded. <br>
-      - For example: <b>openjdk/11.0.2-gcc/8.3.1 jags/4.3.0-gcc/8.3.1</b>
-      </small>
-
-  pbs_venv:
-    label: "Path to Python virtual/conda environment"
-    value: ""
-    help: |
-      <small> Provide an activation command to load the corresponding Python <br>
-      virtual (venv) or conda environment. You can replace NAME_OF_ENVIRONMENT <br>
-      with a corresponding conda environment, or PATH_TO_VIRTUAL_ENVIRONMENT <br>
-      with a specific path to your venv environment directory. <br>
-      - Example conda: <b>conda activate NAME_OF_ENVIRONMENT</b> <br>
-      - Example venv: <b>source PATH_TO_VIRTUAL_ENVIRONMENT/bin/activate</b> <br>
-      </small>
-
-  workflow: 
-    label: "Notebook Workflow"
-    widget: "select"
+  vnc_resolution:
+    label: "Resolution"
     required: true
-    value: "standard"
+    widget: "select"
+    value: "1280x1024"
     options:
-      - ["Standard Jupyter Notebook","standard"]
-      - ["Tensorflow Notebook","tensorflow"]
-      
+      - ["2560x1600","2560x1600"]
+      - ["2560x1440","2560x1440"]
+      - ["1920x1200","1920x1200"]
+      - ["1920x1080","1920x1080"] 
+      - ["1600x1200","1600x1200"]
+      - ["1280x1024","1280x1024"]
+      - ["1280x960","1280x960"]  
+      - ["1024x768","1024x768"]
+      - ["800x600","800x600"]
+
+  bc_vnc_resolution:
+    required: true
+    value: "1280x1024"
+
 form:
   - modules
-  - pbs_modules
-  - pbs_venv
-  - workflow
+  - vnc_resolution
+  - bc_vnc_resolution
   - pbs_select
   - pbs_ncpus
   - pbs_mem

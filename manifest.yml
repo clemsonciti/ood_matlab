@@ -1,8 +1,11 @@
 ---
-name: Jupyter Notebook
+name: Matlab
 category: Interactive Apps
-subcategory: Servers
+subcategory: GUIs
 role: batch_connect
 description: |
-  This app will launch a Jupyter Notebook server on one or more nodes with more advanced PBS resource request options. 
-  Users can also specify virtual/conda environments to launch custom notebooks for Tensorflow and other advanced libraries. 
+  This app will launch a [MATLAB] GUI on the [Palmetto cluster]. You will be able
+  to interact with the MATLAB GUI through a VNC session.
+  
+  [MATLAB]: https://www.mathworks.com/products/matlab.html
+  [Palmetto cluster]: https://www.palmetto.clemson.edu/palmetto/ 
